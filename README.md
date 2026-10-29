@@ -131,7 +131,7 @@ EV-Market-Tableau/
 ### Setup Steps
 ```bash
 # 1. Clone repository and navigate to directory
-git clone https://github.com/nipun-jain/ev-market-tableau.git
+git clone https://github.com/nipunjain18/ev-market-tableau.git
 cd EV-Market-Tableau
 
 # 2. Set up virtual environment and install dependencies

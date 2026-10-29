@@ -194,7 +194,7 @@ def create_report(output_pdf_path):
     meta_data = [
         [Paragraph("<b>Student Name</b>", body_style), Paragraph("<b>Nipun Jain</b>", body_style)],
         [Paragraph("<b>Project Domain</b>", body_style), Paragraph("Data Analytics and Business Intelligence", body_style)],
-        [Paragraph("<b>GitHub Repository</b>", body_style), Paragraph("<font color='#178a63'><u>https://github.com/nipun-jain/ev-market-tableau</u></font>", body_style)],
+        [Paragraph("<b>GitHub Repository</b>", body_style), Paragraph("<font color='#178a63'><u>https://github.com/nipunjain18/ev-market-tableau</u></font>", body_style)],
         [Paragraph("<b>Tableau Public Story</b>", body_style), Paragraph("<font color='#178a63'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1</u></font>", body_style)],
         [Paragraph("<b>Tableau Dashboard</b>", body_style), Paragraph("<font color='#178a63'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview</u></font>", body_style)],
         [Paragraph("<b>Dataset Verified</b>", body_style), Paragraph("<code>ev_market_test.csv</code> (Exactly 100,000 Records, 37 Features)", body_style)],
