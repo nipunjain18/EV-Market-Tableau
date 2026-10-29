@@ -4,9 +4,9 @@
 -- Database Schema Definition (Compatible with MySQL and SQLite)
 -- =====================================================================
 
--- For MySQL: Create database and switch context
-CREATE DATABASE IF NOT EXISTS ev_db;
-USE ev_db;
+-- For MySQL Users: Uncomment the two lines below to initialize the database
+-- CREATE DATABASE IF NOT EXISTS ev_db;
+-- USE ev_db;
 
 -- Table definition for ev_market (100,000 rows, 37 columns)
 CREATE TABLE IF NOT EXISTS ev_market (
@@ -57,7 +57,9 @@ CREATE INDEX IF NOT EXISTS idx_manufacturer ON ev_market(manufacturer);
 CREATE INDEX IF NOT EXISTS idx_battery ON ev_market(battery_type);
 
 -- Analytical View with Derived Fields matching Tableau Calculated Fields
-CREATE OR REPLACE VIEW vw_ev_clean AS
+-- (DROP VIEW IF EXISTS + CREATE VIEW ensures 100% compatibility across both SQLite and MySQL)
+DROP VIEW IF EXISTS vw_ev_clean;
+CREATE VIEW vw_ev_clean AS
 SELECT *,
        ROUND(range_km / price_usd * 1000, 2) AS range_per_1000usd,
        CASE WHEN price_usd < 20000 THEN 'Budget'
