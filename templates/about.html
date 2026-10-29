@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}About | EV Market Analysis{% endblock %}
+{% block content %}
+<h2>About the Project</h2>
+<div class="card">
+  <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+    <tr><td style="padding:6px 0; font-weight:bold; width:180px;">Student Name:</td><td>Nipun Jain</td></tr>
+    <tr><td style="padding:6px 0; font-weight:bold;">Project Title:</td><td>EV Market Analysis</td></tr>
+    <tr><td style="padding:6px 0; font-weight:bold;">Domain:</td><td>Data Analytics and Business Intelligence</td></tr>
+    <tr><td style="padding:6px 0; font-weight:bold;">Tools & Stack:</td><td>Tableau Public, Python (Flask, pandas), SQL (SQLite / MySQL), HTML5/CSS3, Git</td></tr>
+    <tr><td style="padding:6px 0; font-weight:bold;">Published Story:</td><td><a href="https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link" target="_blank">View on Tableau Public</a></td></tr>
+  </table>
+  
+  <h3>Project Overview & Objective</h3>
+  <p>The global Electric Vehicle (EV) industry is experiencing unprecedented expansion across commercial, public transit, and personal mobility sectors. This project presents an end-to-end business intelligence lifecycle analyzing 100,000 EV models across 37 technical and commercial parameters from model years 2018 through 2026.</p>
+  
+  <h3>Technical Architecture</h3>
+  <ol style="padding-left:20px; line-height:1.8;">
+    <li><strong>Data Foundation:</strong> Preserved 100,000-record dataset (<code>ev_market_test.csv</code>) with full schema fidelity and audit of missing values.</li>
+    <li><strong>Database & SQL:</strong> Ingested into structured relational tables with custom indexes and clean analytical views (<code>vw_ev_clean</code>) executing 10 targeted analytical queries.</li>
+    <li><strong>Tableau Analytics:</strong> Built 12 dedicated worksheets, 3 responsive dashboards (Market Overview, Technology, Geography & Impact), and a 6-scene structured Story.</li>
+    <li><strong>Web Application:</strong> Lightweight Flask application with embedded Tableau views, responsive CSS grid, and environment-driven configurations.</li>
+  </ol>
+
+  <h3>Academic Integrity & Attribution</h3>
+  <p style="font-size:0.92rem; color:#666;">This project implementation is customized and verified by Nipun Jain, adapted from an initial architectural template with full preservation of verified Tableau worksheet and dashboard structures, certified against the 100,000-record reference dataset.</p>
+</div>
+{% endblock %}

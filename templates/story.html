@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Story Narrative | EV Market Analysis{% endblock %}
+{% block content %}
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+  <h2 style="margin:0;">Tableau Story: EV Market Dynamics</h2>
+  <a class="btn ghost" href="{{ viz_url }}" target="_blank" rel="noopener">Open in Tableau Public &nearr;</a>
+</div>
+<p style="color:#555; margin-top:0;">Walk through the 6-scene analytical narrative covering market sizing, segment leaders, technology, geography, and strategic recommendations.</p>
+{% include "embed.html" %}
+{% endblock %}

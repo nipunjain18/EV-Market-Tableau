@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Interactive Dashboard | EV Market Analysis{% endblock %}
+{% block content %}
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+  <h2 style="margin:0;">Tableau Interactive Dashboards</h2>
+  <a class="btn ghost" href="{{ viz_url }}" target="_blank" rel="noopener">Open in Tableau Public &nearr;</a>
+</div>
+<p style="color:#555; margin-top:0;">Explore market trends, technology benchmarks, and regional insights with interactive filters.</p>
+{% include "embed.html" %}
+{% endblock %}
