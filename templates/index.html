@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="hero-section">
+<!-- 1. Hero Section -->
+<section id="overview" class="hero-section">
   <div class="badge-pill">
     <span class="pulse-dot"></span>
-    <span>Data Analytics &amp; Business Intelligence Portfolio &middot; {{ student_name }}</span>
+    <span>Tableau Public &middot; Python &middot; SQL &middot; Data Analytics</span>
   </div>
 
   <h1 class="hero-title">
@@ -13,30 +13,27 @@
   </h1>
 
   <p class="hero-subtitle">
-    An end-to-end data analytics platform evaluating <strong>{{ record_count }} EV models</strong> across <strong>{{ attribute_count }} engineering &amp; commercial dimensions</strong>. Featuring interactive Tableau visualizations, high-performance SQL analytics, and full-lifecycle business documentation.
+    An end-to-end data analytics platform evaluating <strong>100,000 EV models</strong> across <strong>37 engineering and commercial parameters</strong> from 2018 to 2026.
   </p>
 
-  <!-- Quick Redirect Action Bar -->
+  <!-- Quick Action Jump Buttons -->
   <div class="quick-action-bar">
-    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">
-      <span>📊 Interactive Dashboards</span>
+    <a href="#redirects" class="btn btn-primary">
+      <span>🚀 Open Redirect Hub</span>
     </a>
-    <a href="{{ url_for('story') }}" class="btn btn-secondary">
-      <span>📖 6-Scene Story</span>
+    <a href="#dashboard" class="btn btn-secondary">
+      <span>📊 View Live Dashboard</span>
     </a>
-    <a href="{{ url_for('sql_lab') }}" class="btn btn-secondary">
-      <span>🗄️ SQL Query Lab</span>
-    </a>
-    <a href="{{ url_for('report') }}" class="btn btn-secondary">
-      <span>📄 Project Report (PDF)</span>
+    <a href="{{ url_for('report') }}" target="_blank" class="btn btn-secondary">
+      <span>📄 Project Report (PDF) &nearr;</span>
     </a>
     <a href="{{ github_url }}" target="_blank" rel="noopener" class="btn btn-secondary">
-      <span>💻 GitHub Repo &nearr;</span>
+      <span>💻 GitHub &nearr;</span>
     </a>
   </div>
 </section>
 
-<!-- KPI Metrics Ribbon -->
+<!-- 2. Fleet Metrics Ribbon -->
 <div class="metrics-ribbon">
   <div class="metric-card">
     <div class="metric-value emerald">100,000</div>
@@ -59,201 +56,256 @@
     <div class="metric-label">Global Market Regions</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value emerald">&lt; 0.8s</div>
-    <div class="metric-label">Extract Filter Latency</div>
+    <div class="metric-value emerald">$65,010</div>
+    <div class="metric-label">Average Fleet Price</div>
   </div>
 </div>
 
-<!-- All-In-One Core Modules / Redirect Hub -->
-<div class="section-header">
-  <div>
-    <h2>Project Modules &amp; Navigation Hub</h2>
-    <p>Directly access every deliverable, visualization, dataset query, and technical documentation file.</p>
-  </div>
-</div>
-
-<div class="hub-grid">
-  <!-- Module 1: Interactive Dashboards -->
-  <a href="{{ url_for('dashboard') }}" class="hub-card">
+<!-- 3. All-In-One Redirect Hub -->
+<section id="redirects" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+  <div class="section-header">
     <div>
-      <div class="hub-card-header">
-        <div class="hub-card-icon">📊</div>
-        <div class="hub-card-title">
-          <span>Module 01</span>
-          <h3>Tableau Dashboards</h3>
-        </div>
-      </div>
-      <div class="hub-card-body">
-        <p>Explore 3 synchronized executive dashboards: Market Overview, Technology &amp; Battery Durability, and Geography &amp; Environmental Impact with full cross-filtering.</p>
-        <div class="hub-card-tags">
-          <span class="hub-tag">12 Worksheets</span>
-          <span class="hub-tag">KPI Cards</span>
-          <span class="hub-tag">6 Global Filters</span>
-          <span class="hub-tag">Top N Parameter</span>
-        </div>
-      </div>
+      <h2>Project Deliverables &amp; Redirect Hub</h2>
+      <p>Quickly access all live visualizations, code repositories, datasets, and reports from one place.</p>
     </div>
-    <div class="hub-card-footer">
-      <span>Launch Interactive Dashboards</span>
-      <span>&rarr;</span>
-    </div>
-  </a>
+  </div>
 
-  <!-- Module 2: 6-Scene Story Narrative -->
-  <a href="{{ url_for('story') }}" class="hub-card">
+  <div class="hub-grid">
+    <!-- Redirect 1: Tableau Dashboard -->
+    <div class="hub-card">
+      <div>
+        <div class="hub-card-header">
+          <div class="hub-card-icon">📊</div>
+          <div class="hub-card-title">
+            <span>Tableau Public</span>
+            <h3>Interactive Dashboard</h3>
+          </div>
+        </div>
+        <div class="hub-card-body">
+          <p>Explore 3 synchronized executive dashboards: Market Overview, Technology &amp; Battery Durability, and Geography &amp; Environmental Impact.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">12 Worksheets</span>
+            <span class="hub-tag">KPI Cards</span>
+            <span class="hub-tag">6 Synchronized Filters</span>
+          </div>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <a href="{{ tableau_dashboard_url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width: 100%;">
+          <span>Open Dashboard in Tableau Public &nearr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Redirect 2: Tableau Story -->
+    <div class="hub-card">
+      <div>
+        <div class="hub-card-header">
+          <div class="hub-card-icon cyan">📖</div>
+          <div class="hub-card-title">
+            <span>Tableau Public</span>
+            <h3>6-Scene Story Narrative</h3>
+          </div>
+        </div>
+        <div class="hub-card-body">
+          <p>A structured 6-scene analytical presentation guiding stakeholders through market sizing, volume leaders, battery degradation, and strategic takeaways.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">6 Scenes</span>
+            <span class="hub-tag">Narrative Insights</span>
+            <span class="hub-tag">Strategic Roadmaps</span>
+          </div>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <a href="{{ tableau_story_url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width: 100%;">
+          <span>Open Story in Tableau Public &nearr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Redirect 3: PDF Project Report -->
+    <div class="hub-card">
+      <div>
+        <div class="hub-card-header">
+          <div class="hub-card-icon purple">📄</div>
+          <div class="hub-card-title">
+            <span>Documentation</span>
+            <h3>Project Report (PDF)</h3>
+          </div>
+        </div>
+        <div class="hub-card-body">
+          <p>Comprehensive 13-page academic and business intelligence report with dataset audits, SQL query results, calculations, and visual outputs.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">13 Pages</span>
+            <span class="hub-tag">13 Visual Figures</span>
+            <span class="hub-tag">1.2 MB PDF</span>
+          </div>
+        </div>
+      </div>
+      <div class="hub-card-footer" style="display: flex; gap: 8px;">
+        <a href="{{ url_for('report') }}" target="_blank" class="btn btn-outline-emerald btn-sm" style="flex: 1;">
+          <span>View Online &nearr;</span>
+        </a>
+        <a href="{{ url_for('download_report') }}" class="btn btn-secondary btn-sm" style="flex: 1;">
+          <span>Download &darr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Redirect 4: GitHub Repository -->
+    <div class="hub-card">
+      <div>
+        <div class="hub-card-header">
+          <div class="hub-card-icon">💻</div>
+          <div class="hub-card-title">
+            <span>Source Code</span>
+            <h3>GitHub Repository</h3>
+          </div>
+        </div>
+        <div class="hub-card-body">
+          <p>Complete project repository including SQL queries, schema DDL, Python data transformation scripts, Flask web app, and README guide.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">Python 3</span>
+            <span class="hub-tag">SQL</span>
+            <span class="hub-tag">Flask</span>
+            <span class="hub-tag">Packaged .twbx</span>
+          </div>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <a href="{{ github_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
+          <span>Visit GitHub Repository &nearr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Redirect 5: Video Walkthrough -->
+    <div class="hub-card">
+      <div>
+        <div class="hub-card-header">
+          <div class="hub-card-icon cyan">🎥</div>
+          <div class="hub-card-title">
+            <span>Demonstration</span>
+            <h3>Demo Video Walkthrough</h3>
+          </div>
+        </div>
+        <div class="hub-card-body">
+          <p>Full project walkthrough demonstrating dataset loading, SQL executions, Tableau visualizations, dashboards, story points, and web deployment.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">Video Walkthrough</span>
+            <span class="hub-tag">Google Drive</span>
+            <span class="hub-tag">Full Architecture</span>
+          </div>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <a href="{{ demo_video_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
+          <span>Watch Demo Video &nearr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Redirect 6: Primary Dataset -->
+    <div class="hub-card">
+      <div>
+        <div class="hub-card-header">
+          <div class="hub-card-icon purple">📥</div>
+          <div class="hub-card-title">
+            <span>Primary Data</span>
+            <h3>Dataset Download</h3>
+          </div>
+        </div>
+        <div class="hub-card-body">
+          <p>Download the exact verified 100,000-record reference dataset (<code>ev_market_test.csv</code>) connected to the Tableau workbook.</p>
+          <div class="hub-card-tags">
+            <span class="hub-tag">100,000 Rows</span>
+            <span class="hub-tag">37 Attributes</span>
+            <span class="hub-tag">CSV (23.2 MB)</span>
+          </div>
+        </div>
+      </div>
+      <div class="hub-card-footer">
+        <a href="{{ url_for('download_data') }}" class="btn btn-outline-emerald btn-sm" style="width: 100%;">
+          <span>Download Dataset (CSV) &darr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Embedded Tableau Interactive Section -->
+<section id="dashboard" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+  <div class="section-header">
     <div>
-      <div class="hub-card-header">
-        <div class="hub-card-icon cyan">📖</div>
-        <div class="hub-card-title">
-          <span>Module 02</span>
-          <h3>Tableau Story Narrative</h3>
-        </div>
-      </div>
-      <div class="hub-card-body">
-        <p>A guided 6-scene structured narrative presenting market sizing, mass-adoption volume drivers, battery durability science, and strategic recommendations.</p>
-        <div class="hub-card-tags">
-          <span class="hub-tag">6 Scenes</span>
-          <span class="hub-tag">Executive Summary</span>
-          <span class="hub-tag">Battery Chemistry</span>
-          <span class="hub-tag">Price Regression</span>
-        </div>
-      </div>
+      <h2>📊 Live Interactive Tableau Public Embed</h2>
+      <p>Interact with the live visualization directly below or launch full-screen.</p>
     </div>
-    <div class="hub-card-footer">
-      <span>Read 6-Scene Story</span>
-      <span>&rarr;</span>
+    <div class="header-actions">
+      <a href="{{ tableau_dashboard_url }}" target="_blank" rel="noopener" class="btn btn-outline-emerald btn-sm">
+        <span>Launch Fullscreen &nearr;</span>
+      </a>
     </div>
-  </a>
+  </div>
 
-  <!-- Module 3: SQL & Database Studio -->
-  <a href="{{ url_for('sql_lab') }}" class="hub-card">
+  <div class="viz-container-card">
+    <div class="viz-wrap">
+      <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+      <tableau-viz id="tableauViz" src="{{ dashboard_url }}" toolbar="bottom" hide-tabs></tableau-viz>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Key Empirical Findings Section -->
+<section id="insights" style="scroll-margin-top: 90px; margin-bottom: 50px;">
+  <div class="section-header">
     <div>
-      <div class="hub-card-header">
-        <div class="hub-card-icon purple">🗄️</div>
-        <div class="hub-card-title">
-          <span>Module 03</span>
-          <h3>SQL Lab &amp; Database Studio</h3>
-        </div>
-      </div>
-      <div class="hub-card-body">
-        <p>Interactive SQL query engine connected to the 100,000-record SQLite/MySQL database. Inspect verified analytical queries with live tabular results.</p>
-        <div class="hub-card-tags">
-          <span class="hub-tag">10 Queries</span>
-          <span class="hub-tag">SQLite / MySQL</span>
-          <span class="hub-tag">vw_ev_clean</span>
-          <span class="hub-tag">Performance Indexing</span>
-        </div>
-      </div>
+      <h2>💡 Core Analytical Insights</h2>
+      <p>Key quantitative conclusions drawn from the 100,000 EV fleet analysis.</p>
     </div>
-    <div class="hub-card-footer">
-      <span>Open SQL Query Studio</span>
-      <span>&rarr;</span>
-    </div>
-  </a>
+  </div>
 
-  <!-- Module 4: PDF Project Report -->
-  <a href="{{ url_for('report') }}" class="hub-card">
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+      <h3 style="color: var(--emerald-light); font-size: 1.05rem; margin-bottom: 8px;">🛵 Volume Disparity</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Two-Wheeler Scooters lead global sales (<strong>85.0M units</strong>), followed by Sedans (<strong>78.3M</strong>) and Compact SUVs (<strong>76.1M</strong>). Buses and Trucks sell fewer units (5.1M) but drive premium ticket revenue.</p>
+    </div>
+
+    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+      <h3 style="color: var(--cyan-light); font-size: 1.05rem; margin-bottom: 8px;">🔋 Battery Longevity Science</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Solid-State leads with <strong>2,999 cycles</strong> and <strong>7.36% 5-yr degradation</strong>; LFP follows with <strong>2,498 cycles</strong> and <strong>10.11%</strong>. NMC, Sodium-Ion, and NCA degrade at ~14%.</p>
+    </div>
+
+    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+      <h3 style="color: #c084fc; font-size: 1.05rem; margin-bottom: 8px;">💰 Price Regression Drivers</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Retail price correlates heavily with battery pack capacity (<strong>r = 0.84</strong>) rather than driving range (<strong>r = 0.28</strong>), reflecting physical battery pack manufacturing expenses.</p>
+    </div>
+
+    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+      <h3 style="color: #facc15; font-size: 1.05rem; margin-bottom: 8px;">⚡ Charging Parity</h3>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">DC fast charging averages <strong>~21.1 minutes</strong> and range averages <strong>~324 km</strong> across all chemistries, proving chemistry choice influences lifecycle durability rather than charge speed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Embedded PDF Report Preview Section -->
+<section id="report" style="scroll-margin-top: 90px; margin-bottom: 30px;">
+  <div class="section-header">
     <div>
-      <div class="hub-card-header">
-        <div class="hub-card-icon">📄</div>
-        <div class="hub-card-title">
-          <span>Module 04</span>
-          <h3>Publication PDF Report</h3>
-        </div>
-      </div>
-      <div class="hub-card-body">
-        <p>Comprehensive 13-page formal project report featuring problem understanding, database architecture, query benchmarks, and full analytical findings.</p>
-        <div class="hub-card-tags">
-          <span class="hub-tag">13 Pages</span>
-          <span class="hub-tag">Cover Page</span>
-          <span class="hub-tag">13 Chart Figures</span>
-          <span class="hub-tag">One-Click Download</span>
-        </div>
-      </div>
+      <h2>📄 Project Report Document</h2>
+      <p>13-page technical report with full methodology, SQL queries, and visual documentation.</p>
     </div>
-    <div class="hub-card-footer">
-      <span>View &amp; Download PDF</span>
-      <span>&rarr;</span>
-    </div>
-  </a>
-
-  <!-- Module 5: Performance Testing Record -->
-  <div class="hub-card">
-    <div>
-      <div class="hub-card-header">
-        <div class="hub-card-icon cyan">⚡</div>
-        <div class="hub-card-title">
-          <span>Module 05</span>
-          <h3>Performance Testing</h3>
-        </div>
-      </div>
-      <div class="hub-card-body">
-        <p>Verified workload metrics for Skill Wallet accreditation: 100,000 records rendered, 6 synchronized filters, 6 calculated fields, and sub-second extract response.</p>
-        <div class="hub-card-tags">
-          <span class="hub-tag">100k Rows</span>
-          <span class="hub-tag">6 Filters</span>
-          <span class="hub-tag">6 Calc Fields</span>
-          <span class="hub-tag">&lt; 0.8s Latency</span>
-        </div>
-      </div>
-    </div>
-    <div class="hub-card-footer" style="color: var(--text-muted);">
-      <span>Skill Wallet Status: 90% Verified</span>
-      <span>✓</span>
+    <div class="header-actions">
+      <a href="{{ url_for('download_report') }}" class="btn btn-primary btn-sm">
+        <span>Download Report PDF &darr;</span>
+      </a>
+      <a href="{{ url_for('report') }}" target="_blank" class="btn btn-secondary btn-sm">
+        <span>Open in New Tab &nearr;</span>
+      </a>
     </div>
   </div>
 
-  <!-- Module 6: Project Attribution & Repo -->
-  <a href="{{ url_for('about') }}" class="hub-card">
-    <div>
-      <div class="hub-card-header">
-        <div class="hub-card-icon purple">👤</div>
-        <div class="hub-card-title">
-          <span>Module 06</span>
-          <h3>Project &amp; Author Specs</h3>
-        </div>
-      </div>
-      <div class="hub-card-body">
-        <p>Complete student attribution for <strong>{{ student_name }}</strong>, dataset provenance audit, technology stack specifications, and repository release metadata.</p>
-        <div class="hub-card-tags">
-          <span class="hub-tag">Nipun Jain</span>
-          <span class="hub-tag">Data Analytics</span>
-          <span class="hub-tag">Tableau Public</span>
-          <span class="hub-tag">MIT Open Source</span>
-        </div>
-      </div>
-    </div>
-    <div class="hub-card-footer">
-      <span>Read Project Profile</span>
-      <span>&rarr;</span>
-    </div>
-  </a>
-</div>
-
-<!-- Key Empirical Findings Banner -->
-<div class="section-header" style="margin-top: 40px;">
-  <div>
-    <h2>Key Market Intelligence Findings</h2>
-    <p>Core quantitative takeaways derived from the 100,000-model dataset.</p>
+  <div class="viz-container-card" style="padding: 12px;">
+    <iframe src="{{ url_for('static', filename='docs/EV_Market_Tableau_Project_Report.pdf') }}" style="width: 100%; height: 750px; border: none; border-radius: var(--radius-md); background: #1e293b;"></iframe>
   </div>
-</div>
-
-<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 50px;">
-  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-    <h3 style="color: var(--emerald-light); font-size: 1.05rem; margin-bottom: 8px;">🛵 Volume Disparity</h3>
-    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Two-Wheeler Scooters lead global sales (<strong>85.0M units</strong>), followed by Sedans (<strong>78.3M</strong>) and Compact SUVs (<strong>76.1M</strong>). Buses and Trucks represent low volume (5.1M) but premium ticket revenue.</p>
-  </div>
-  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-    <h3 style="color: var(--cyan-light); font-size: 1.05rem; margin-bottom: 8px;">🔋 Battery Longevity Science</h3>
-    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Solid-State leads with <strong>2,999 cycles</strong> and <strong>7.36% 5-yr degradation</strong>; LFP follows with <strong>2,498 cycles</strong> and <strong>10.11%</strong>. NMC, Sodium-Ion, and NCA suffer ~14% degradation.</p>
-  </div>
-  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-    <h3 style="color: #c084fc; font-size: 1.05rem; margin-bottom: 8px;">💰 Price Drivers</h3>
-    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Vehicle price correlates strongly with battery pack capacity (<strong>r = 0.84</strong>) rather than driving range (<strong>r = 0.28</strong>), reflecting high raw pack manufacturing expenses.</p>
-  </div>
-  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-    <h3 style="color: #facc15; font-size: 1.05rem; margin-bottom: 8px;">⚡ Charging Parity</h3>
-    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Fast-charge durations average <strong>~21.1 minutes</strong> and range averages <strong>~324 km</strong> across all 5 chemistries, proving chemistry choice dictates lifecycle durability rather than charge speed.</p>
-  </div>
-</div>
+</section>
 {% endblock %}
