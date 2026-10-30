@@ -1,311 +1,259 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- 1. Hero Section -->
-<section id="overview" class="hero-section">
-  <div class="badge-pill">
-    <span class="pulse-dot"></span>
-    <span>Tableau Public &middot; Python &middot; SQL &middot; Data Analytics</span>
-  </div>
-
-  <h1 class="hero-title">
-    Global <span class="gradient-text">Electric Vehicle</span> Market Intelligence
-  </h1>
-
-  <p class="hero-subtitle">
-    An end-to-end data analytics platform evaluating <strong>100,000 EV models</strong> across <strong>37 engineering and commercial parameters</strong> from 2018 to 2026.
-  </p>
-
-  <!-- Quick Action Jump Buttons -->
-  <div class="quick-action-bar">
-    <a href="#redirects" class="btn btn-primary">
-      <span>🚀 Open Redirect Hub</span>
-    </a>
-    <a href="#dashboard" class="btn btn-secondary">
-      <span>📊 View Live Dashboard</span>
-    </a>
-    <a href="{{ url_for('report') }}" target="_blank" class="btn btn-secondary">
-      <span>📄 Project Report (PDF) &nearr;</span>
-    </a>
-    <a href="{{ github_url }}" target="_blank" rel="noopener" class="btn btn-secondary">
-      <span>💻 GitHub &nearr;</span>
-    </a>
-  </div>
-</section>
-
-<!-- 2. Fleet Metrics Ribbon -->
-<div class="metrics-ribbon">
-  <div class="metric-card">
-    <div class="metric-value emerald">100,000</div>
-    <div class="metric-label">EV Models Analyzed</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">200</div>
-    <div class="metric-label">Automotive Brands</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">15</div>
-    <div class="metric-label">Vehicle Categories</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value emerald">5</div>
-    <div class="metric-label">Battery Chemistries</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">7</div>
-    <div class="metric-label">Global Market Regions</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value emerald">$65,010</div>
-    <div class="metric-label">Average Fleet Price</div>
-  </div>
-</div>
-
-<!-- 3. All-In-One Redirect Hub -->
-<section id="redirects" style="scroll-margin-top: 90px; margin-bottom: 50px;">
-  <div class="section-header">
-    <div>
-      <h2>Project Deliverables &amp; Redirect Hub</h2>
-      <p>Quickly access all live visualizations, code repositories, datasets, and reports from one place.</p>
-    </div>
-  </div>
-
-  <div class="hub-grid">
-    <!-- Redirect 1: Tableau Dashboard -->
-    <div class="hub-card">
-      <div>
-        <div class="hub-card-header">
-          <div class="hub-card-icon">📊</div>
-          <div class="hub-card-title">
-            <span>Tableau Public</span>
-            <h3>Interactive Dashboard</h3>
-          </div>
-        </div>
-        <div class="hub-card-body">
-          <p>Explore 3 synchronized executive dashboards: Market Overview, Technology &amp; Battery Durability, and Geography &amp; Environmental Impact.</p>
-          <div class="hub-card-tags">
-            <span class="hub-tag">12 Worksheets</span>
-            <span class="hub-tag">KPI Cards</span>
-            <span class="hub-tag">6 Synchronized Filters</span>
-          </div>
-        </div>
+<!-- 1. HERO SECTION (#home) -->
+<section id="home" class="hero-section">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="section-tag">
+        <span class="tag-dot"></span>
+        <span>DATA-DRIVEN EV INTELLIGENCE</span>
       </div>
-      <div class="hub-card-footer">
-        <a href="{{ tableau_dashboard_url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width: 100%;">
-          <span>Open Dashboard in Tableau Public &nearr;</span>
+
+      <h1 class="hero-heading">
+        Understand markets. <br>
+        <span class="serif">Make informed choices.</span>
+      </h1>
+
+      <p class="hero-description">
+        Explore vehicle pricing, battery longevity, and regional adoption patterns across 100,000 EV models through an interactive analytics experience.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#dashboard" class="btn-pill btn-terracotta">
+          Explore dashboard &nearr;
         </a>
+        <a href="#about" class="btn-pill btn-outline">
+          Discover EV360
+        </a>
+      </div>
+
+      <div class="hero-footnote">
+        <span class="star">&#10022;</span>
+        <span>Turning global automotive data into clearer market insights</span>
       </div>
     </div>
 
-    <!-- Redirect 2: Tableau Story -->
-    <div class="hub-card">
-      <div>
-        <div class="hub-card-header">
-          <div class="hub-card-icon cyan">📖</div>
-          <div class="hub-card-title">
-            <span>Tableau Public</span>
-            <h3>6-Scene Story Narrative</h3>
-          </div>
-        </div>
-        <div class="hub-card-body">
-          <p>A structured 6-scene analytical presentation guiding stakeholders through market sizing, volume leaders, battery degradation, and strategic takeaways.</p>
-          <div class="hub-card-tags">
-            <span class="hub-tag">6 Scenes</span>
-            <span class="hub-tag">Narrative Insights</span>
-            <span class="hub-tag">Strategic Roadmaps</span>
-          </div>
-        </div>
-      </div>
-      <div class="hub-card-footer">
-        <a href="{{ tableau_story_url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="width: 100%;">
-          <span>Open Story in Tableau Public &nearr;</span>
-        </a>
-      </div>
-    </div>
+    <div class="hero-right">
+      <div class="illustration-stage">
+        <div class="halo-circle"></div>
+        <div class="halo-dot"></div>
 
-    <!-- Redirect 3: PDF Project Report -->
-    <div class="hub-card">
-      <div>
-        <div class="hub-card-header">
-          <div class="hub-card-icon purple">📄</div>
-          <div class="hub-card-title">
-            <span>Documentation</span>
-            <h3>Project Report (PDF)</h3>
+        <!-- Floating Badge Pill Top Left -->
+        <div class="floating-pill-card top-left">
+          <div class="pill-icon">&#9825;</div>
+          <div class="pill-text">
+            <h4>Fleet-first</h4>
+            <p>Insights at a glance</p>
           </div>
         </div>
-        <div class="hub-card-body">
-          <p>Comprehensive 13-page academic and business intelligence report with dataset audits, SQL query results, calculations, and visual outputs.</p>
-          <div class="hub-card-tags">
-            <span class="hub-tag">13 Pages</span>
-            <span class="hub-tag">13 Visual Figures</span>
-            <span class="hub-tag">1.2 MB PDF</span>
-          </div>
-        </div>
-      </div>
-      <div class="hub-card-footer" style="display: flex; gap: 8px;">
-        <a href="{{ url_for('report') }}" target="_blank" class="btn btn-outline-emerald btn-sm" style="flex: 1;">
-          <span>View Online &nearr;</span>
-        </a>
-        <a href="{{ url_for('download_report') }}" class="btn btn-secondary btn-sm" style="flex: 1;">
-          <span>Download &darr;</span>
-        </a>
-      </div>
-    </div>
 
-    <!-- Redirect 4: GitHub Repository -->
-    <div class="hub-card">
-      <div>
-        <div class="hub-card-header">
-          <div class="hub-card-icon">💻</div>
-          <div class="hub-card-title">
-            <span>Source Code</span>
-            <h3>GitHub Repository</h3>
+        <!-- Central 3D Perspective Card -->
+        <div class="mockup-main-card">
+          <div class="card-perspective-title">
+            <span>360° perspective</span>
+            <span>&bull; Live insights</span>
+          </div>
+          <div class="card-big-stat">
+            100,000 <span>models</span>
+          </div>
+          <div class="mock-bars-container">
+            <div class="mock-bar b1" title="Subcompact"></div>
+            <div class="mock-bar b2" title="Compact"></div>
+            <div class="mock-bar b3" title="Mid-size"></div>
+            <div class="mock-bar b4" title="SUV"></div>
+            <div class="mock-bar b5" title="Luxury"></div>
+            <div class="mock-bar b6" title="Commercial"></div>
+          </div>
+          <div class="mock-legend">
+            <span>200 Brands</span>
+            <span>&bull;</span>
+            <span>15 Categories</span>
+            <span>&bull;</span>
+            <span>7 Regions</span>
           </div>
         </div>
-        <div class="hub-card-body">
-          <p>Complete project repository including SQL queries, schema DDL, Python data transformation scripts, Flask web app, and README guide.</p>
-          <div class="hub-card-tags">
-            <span class="hub-tag">Python 3</span>
-            <span class="hub-tag">SQL</span>
-            <span class="hub-tag">Flask</span>
-            <span class="hub-tag">Packaged .twbx</span>
-          </div>
-        </div>
-      </div>
-      <div class="hub-card-footer">
-        <a href="{{ github_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
-          <span>Visit GitHub Repository &nearr;</span>
-        </a>
-      </div>
-    </div>
 
-    <!-- Redirect 5: Video Walkthrough -->
-    <div class="hub-card">
-      <div>
-        <div class="hub-card-header">
-          <div class="hub-card-icon cyan">🎥</div>
-          <div class="hub-card-title">
-            <span>Demonstration</span>
-            <h3>Demo Video Walkthrough</h3>
+        <!-- Floating Badge Pill Bottom Right -->
+        <div class="floating-pill-card bottom-right">
+          <div class="pill-icon">&nearr;</div>
+          <div class="pill-text">
+            <h4>Explore patterns</h4>
+            <p>Across 15 categories</p>
           </div>
         </div>
-        <div class="hub-card-body">
-          <p>Full project walkthrough demonstrating dataset loading, SQL executions, Tableau visualizations, dashboards, story points, and web deployment.</p>
-          <div class="hub-card-tags">
-            <span class="hub-tag">Video Walkthrough</span>
-            <span class="hub-tag">Google Drive</span>
-            <span class="hub-tag">Full Architecture</span>
-          </div>
-        </div>
-      </div>
-      <div class="hub-card-footer">
-        <a href="{{ demo_video_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="width: 100%;">
-          <span>Watch Demo Video &nearr;</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Redirect 6: Primary Dataset -->
-    <div class="hub-card">
-      <div>
-        <div class="hub-card-header">
-          <div class="hub-card-icon purple">📥</div>
-          <div class="hub-card-title">
-            <span>Primary Data</span>
-            <h3>Dataset Download</h3>
-          </div>
-        </div>
-        <div class="hub-card-body">
-          <p>Download the exact verified 100,000-record reference dataset (<code>ev_market_test.csv</code>) connected to the Tableau workbook.</p>
-          <div class="hub-card-tags">
-            <span class="hub-tag">100,000 Rows</span>
-            <span class="hub-tag">37 Attributes</span>
-            <span class="hub-tag">CSV (23.2 MB)</span>
-          </div>
-        </div>
-      </div>
-      <div class="hub-card-footer">
-        <a href="{{ url_for('download_data') }}" class="btn btn-outline-emerald btn-sm" style="width: 100%;">
-          <span>Download Dataset (CSV) &darr;</span>
-        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 4. Embedded Tableau Interactive Section -->
-<section id="dashboard" style="scroll-margin-top: 90px; margin-bottom: 50px;">
-  <div class="section-header">
-    <div>
-      <h2>📊 Live Interactive Tableau Public Embed</h2>
-      <p>Interact with the live visualization directly below or launch full-screen.</p>
+<!-- 2. ABOUT SECTION (#about) -->
+<section id="about" class="section-wrapper">
+  <div class="section-title-center">
+    <div class="section-tag">
+      <span class="tag-dot"></span>
+      <span>ABOUT EV360</span>
     </div>
-    <div class="header-actions">
-      <a href="{{ tableau_dashboard_url }}" target="_blank" rel="noopener" class="btn btn-outline-emerald btn-sm">
-        <span>Launch Fullscreen &nearr;</span>
-      </a>
-    </div>
+    <h2>Built for transparent automotive analytics.</h2>
+    <p>
+      A unified intelligence platform analyzing electric vehicle engineering, market penetration, and economic viability.
+    </p>
   </div>
 
-  <div class="viz-container-card">
-    <div class="viz-wrap">
-      <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
-      <tableau-viz id="tableauViz" src="{{ dashboard_url }}" toolbar="bottom" hide-tabs></tableau-viz>
-    </div>
-  </div>
-</section>
-
-<!-- 5. Key Empirical Findings Section -->
-<section id="insights" style="scroll-margin-top: 90px; margin-bottom: 50px;">
-  <div class="section-header">
-    <div>
-      <h2>💡 Core Analytical Insights</h2>
-      <p>Key quantitative conclusions drawn from the 100,000 EV fleet analysis.</p>
-    </div>
-  </div>
-
-  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
-    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-      <h3 style="color: var(--emerald-light); font-size: 1.05rem; margin-bottom: 8px;">🛵 Volume Disparity</h3>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Two-Wheeler Scooters lead global sales (<strong>85.0M units</strong>), followed by Sedans (<strong>78.3M</strong>) and Compact SUVs (<strong>76.1M</strong>). Buses and Trucks sell fewer units (5.1M) but drive premium ticket revenue.</p>
+  <div class="feature-cards-grid">
+    <div class="feature-card">
+      <div class="feature-card-icon">⚡</div>
+      <h3>100,000 Verified Records</h3>
+      <p>
+        Cleaned and standardized across 37 engineering, financial, and geographic parameters with automated ETL pipelines and SQLite validation.
+      </p>
     </div>
 
-    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-      <h3 style="color: var(--cyan-light); font-size: 1.05rem; margin-bottom: 8px;">🔋 Battery Longevity Science</h3>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Solid-State leads with <strong>2,999 cycles</strong> and <strong>7.36% 5-yr degradation</strong>; LFP follows with <strong>2,498 cycles</strong> and <strong>10.11%</strong>. NMC, Sodium-Ion, and NCA degrade at ~14%.</p>
+    <div class="feature-card">
+      <div class="feature-card-icon">🔋</div>
+      <h3>Multi-Dimensional Analytics</h3>
+      <p>
+        Detailed correlations examining battery degradation, charging speed efficiency, price elasticities, and global regulatory incentives.
+      </p>
     </div>
 
-    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-      <h3 style="color: #c084fc; font-size: 1.05rem; margin-bottom: 8px;">💰 Price Regression Drivers</h3>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Retail price correlates heavily with battery pack capacity (<strong>r = 0.84</strong>) rather than driving range (<strong>r = 0.28</strong>), reflecting physical battery pack manufacturing expenses.</p>
-    </div>
-
-    <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
-      <h3 style="color: #facc15; font-size: 1.05rem; margin-bottom: 8px;">⚡ Charging Parity</h3>
-      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">DC fast charging averages <strong>~21.1 minutes</strong> and range averages <strong>~324 km</strong> across all chemistries, proving chemistry choice influences lifecycle durability rather than charge speed.</p>
+    <div class="feature-card">
+      <div class="feature-card-icon">📈</div>
+      <h3>Interactive BI Integration</h3>
+      <p>
+        Directly integrated with Tableau Public API v3, delivering responsive cross-filtering, dynamic metrics, and multi-scene narrative storytelling.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- 6. Embedded PDF Report Preview Section -->
-<section id="report" style="scroll-margin-top: 90px; margin-bottom: 30px;">
-  <div class="section-header">
-    <div>
-      <h2>📄 Project Report Document</h2>
-      <p>13-page technical report with full methodology, SQL queries, and visual documentation.</p>
+<!-- 3. DASHBOARD SECTION (#dashboard) -->
+<section id="dashboard" class="section-wrapper">
+  <div class="section-title-center">
+    <div class="section-tag">
+      <span class="tag-dot"></span>
+      <span>EXPLORE THE VISUALISATION</span>
     </div>
-    <div class="header-actions">
-      <a href="{{ url_for('download_report') }}" class="btn btn-primary btn-sm">
-        <span>Download Report PDF &darr;</span>
-      </a>
-      <a href="{{ url_for('report') }}" target="_blank" class="btn btn-secondary btn-sm">
-        <span>Open in New Tab &nearr;</span>
-      </a>
-    </div>
+    <h2>Your EV market dashboard.</h2>
+    <p>
+      Interact with real-time filters across brands, price brackets, and battery capacities.
+    </p>
   </div>
 
-  <div class="viz-container-card" style="padding: 12px;">
-    <iframe src="{{ url_for('static', filename='docs/EV_Market_Tableau_Project_Report.pdf') }}" style="width: 100%; height: 750px; border: none; border-radius: var(--radius-md); background: #1e293b;"></iframe>
+  <div class="mac-window-card">
+    <div class="mac-window-header">
+      <div class="mac-dots">
+        <span class="mac-dot red"></span>
+        <span class="mac-dot yellow"></span>
+        <span class="mac-dot green"></span>
+        <span class="mac-title">EV360 &middot; Dashboard</span>
+      </div>
+      <div class="mac-action">
+        <a href="{{ dashboard_url }}" target="_blank" rel="noopener">Open in Tableau &nearr;</a>
+      </div>
+    </div>
+    <div class="mac-window-body">
+      <tableau-viz id="tableauDashboard"
+        src="{{ dashboard_url }}"
+        width="100%"
+        height="840"
+        hide-tabs
+        toolbar="bottom">
+      </tableau-viz>
+    </div>
+  </div>
+</section>
+
+<!-- 4. STORY SECTION (#story) -->
+<section id="story" class="section-wrapper">
+  <div class="section-title-center">
+    <div class="section-tag">
+      <span class="tag-dot"></span>
+      <span>FOLLOW THE STORY</span>
+    </div>
+    <h2>See the story behind the data.</h2>
+    <p>
+      A curated 6-scene walkthrough exploring market transitions, technological breakthroughs, and regional adoption forecasts.
+    </p>
+  </div>
+
+  <div class="mac-window-card">
+    <div class="mac-window-header">
+      <div class="mac-dots">
+        <span class="mac-dot red"></span>
+        <span class="mac-dot yellow"></span>
+        <span class="mac-dot green"></span>
+        <span class="mac-title">EV360 &middot; Story</span>
+      </div>
+      <div class="mac-action">
+        <a href="{{ story_url }}" target="_blank" rel="noopener">Open in Tableau &nearr;</a>
+      </div>
+    </div>
+    <div class="mac-window-body">
+      <tableau-viz id="tableauStory"
+        src="{{ story_url }}"
+        width="100%"
+        height="860"
+        hide-tabs
+        toolbar="bottom">
+      </tableau-viz>
+    </div>
+  </div>
+</section>
+
+<!-- 5. FAQ SECTION (#faq) -->
+<section id="faq" class="section-wrapper">
+  <div class="section-title-center">
+    <div class="section-tag">
+      <span class="tag-dot"></span>
+      <span>QUICK ANSWERS</span>
+    </div>
+    <h2>Frequently asked questions.</h2>
+    <p>
+      Everything you need to know about the EV360 analytics platform and underlying dataset.
+    </p>
+  </div>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What dataset powers the EV360 dashboard?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>The platform is powered by a verified 100,000-record dataset spanning 37 technical, economic, and regional attributes, covering global EV models from 2018 to 2026.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How was the data cleaned and processed?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Data was processed using Python (pandas, NumPy) and SQLite. Missing values were imputed using domain-specific medians, and 5 analytical features were engineered: Range per $1,000, Price Segment, Range Class, Fast-Charge Rating, and Estimated Revenue.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How are the Tableau visualizations embedded?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Visualizations are embedded using Tableau Embedding API v3 components with responsive containers, preserving full interactivity, filter propagation, and high-performance rendering.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Can I download the project deliverables and report?</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        <p>Yes! You can download the comprehensive 13-page PDF project report, view the SQL queries, and access the open-source repository directly through the navigation links.</p>
+      </div>
+    </div>
   </div>
 </section>
 {% endblock %}

@@ -1,5 +1,5 @@
-"""Flask Web Application for EV Market Analysis.
-Clean, Aesthetic Single-Page BI Portal with Direct Redirects.
+"""Flask Web Application for EV Market Analysis (EV360).
+Aesthetic single-page design matching Health360 reference.
 Author: Nipun Jain
 """
 import os
@@ -10,7 +10,6 @@ from flask import Flask, render_template, redirect, url_for, send_from_directory
 load_dotenv()
 app = Flask(__name__)
 
-# Primary Links
 TABLEAU_STORY_URL = os.getenv(
     "TABLEAU_STORY_URL",
     "https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link"
@@ -58,7 +57,12 @@ def story():
 
 @app.route("/about")
 def about():
-    return redirect(url_for("home"))
+    return redirect(f"{url_for('home')}#about")
+
+
+@app.route("/faq")
+def faq():
+    return redirect(f"{url_for('home')}#faq")
 
 
 @app.route("/report")
@@ -87,5 +91,5 @@ def download_data():
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
     debug = os.getenv("FLASK_DEBUG", "True").lower() in ("true", "1", "yes")
-    print(f"Starting EV Market Analytics Web App on http://127.0.0.1:{port}")
+    print(f"Starting EV360 Web App on http://127.0.0.1:{port}")
     app.run(host="0.0.0.0", port=port, debug=debug)
