@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Publication Project Report | EV Market Intelligence{% endblock %}
+
+{% block content %}
+<div class="section-header">
+  <div>
+    <h2>📄 Publication-Grade Project Report (PDF)</h2>
+    <p>13-page comprehensive technical &amp; business intelligence report prepared for academic submission.</p>
+  </div>
+  <div class="header-actions">
+    <a href="{{ url_for('download_report') }}" class="btn btn-primary btn-sm">
+      <span>📥 Download PDF (1.2 MB)</span>
+    </a>
+  </div>
+</div>
+
+<div class="grid" style="display: grid; grid-template-columns: 320px 1fr; gap: 24px; margin-bottom: 30px;">
+  <!-- Left: Report Metadata & Table of Contents -->
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+    <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--emerald-light); margin-bottom: 12px;">Report Specifications</h3>
+    <table style="width: 100%; font-size: 0.85rem; color: var(--text-secondary); line-height: 2;">
+      <tr><td><strong>Author:</strong></td><td>{{ student_name }}</td></tr>
+      <tr><td><strong>Pages:</strong></td><td>13 Pages (Numbered)</td></tr>
+      <tr><td><strong>Format:</strong></td><td>Adobe PDF (ReportLab)</td></tr>
+      <tr><td><strong>Figures:</strong></td><td>13 Embedded Visuals</td></tr>
+      <tr><td><strong>Dataset:</strong></td><td>100,000 Records</td></tr>
+    </table>
+
+    <div style="border-top: 1px solid var(--border); margin: 18px 0; padding-top: 14px;">
+      <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 10px;">Table of Contents</h4>
+      <ol style="font-size: 0.82rem; color: var(--text-muted); padding-left: 18px; line-height: 1.8;">
+        <li>Problem Understanding &amp; Objectives</li>
+        <li>Verified Dataset Description (100k)</li>
+        <li>Data Quality Audit &amp; Schema</li>
+        <li>SQL Query Benchmarks (Screenshots 1–6)</li>
+        <li>Tableau Connection &amp; Data Prep</li>
+        <li>Worksheets &amp; Calculated Fields</li>
+        <li>Coordinated Dashboards Architecture</li>
+        <li>6-Scene Tableau Story Narrative</li>
+        <li>Web Integration with Flask</li>
+        <li>Performance Testing Records</li>
+        <li>Key Market Analytics Insights</li>
+        <li>Conclusion, Scope &amp; Attribution</li>
+      </ol>
+    </div>
+
+    <a href="{{ url_for('download_report') }}" class="btn btn-outline-emerald" style="width: 100%; text-align: center; margin-top: 10px;">
+      <span>Download Report PDF &darr;</span>
+    </a>
+  </div>
+
+  <!-- Right: Embedded In-Browser PDF Preview -->
+  <div class="viz-container-card" style="margin-bottom: 0;">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(15, 23, 42, 0.9); border-radius: var(--radius-md); margin-bottom: 12px; border: 1px solid var(--border);">
+      <span style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600;">Interactive In-Browser PDF Viewer</span>
+      <a href="{{ url_for('static', filename='docs/EV_Market_Tableau_Project_Report.pdf') }}" target="_blank" class="btn btn-secondary btn-sm">
+        <span>Open in New Tab &nearr;</span>
+      </a>
+    </div>
+    <iframe src="{{ url_for('static', filename='docs/EV_Market_Tableau_Project_Report.pdf') }}" style="width: 100%; height: 820px; border: none; border-radius: var(--radius-md); background: #333;"></iframe>
+  </div>
+</div>
+{% endblock %}

@@ -1,10 +1,69 @@
 {% extends "base.html" %}
-{% block title %}Interactive Dashboard | EV Market Analysis{% endblock %}
+
+{% block title %}Interactive Dashboards | EV Market Intelligence{% endblock %}
+
 {% block content %}
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-  <h2 style="margin:0;">Tableau Interactive Dashboards</h2>
-  <a class="btn ghost" href="{{ viz_url }}" target="_blank" rel="noopener">Open in Tableau Public &nearr;</a>
+<div class="viz-container-card">
+  <div class="viz-toolbar">
+    <div>
+      <h2>📊 Interactive Tableau Dashboards</h2>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 2px;">
+        3 Coordinated Views &middot; Market Overview &middot; Technology &middot; Geography and Impact
+      </p>
+    </div>
+    <div class="viz-actions">
+      <a href="{{ viz_url }}" target="_blank" rel="noopener" class="btn btn-outline-emerald btn-sm">
+        <span>Open in Tableau Public &nearr;</span>
+      </a>
+      <a href="{{ url_for('story') }}" class="btn btn-secondary btn-sm">
+        <span>Switch to Story Mode &rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  {% include "embed.html" %}
 </div>
-<p style="color:#555; margin-top:0;">Explore market trends, technology benchmarks, and regional insights with interactive filters.</p>
-{% include "embed.html" %}
+
+<!-- Dashboard Components Architecture -->
+<div class="section-header" style="margin-top: 36px;">
+  <div>
+    <h2>Dashboard Structure &amp; Synchronized Visualizations</h2>
+    <p>12 worksheets organized across 3 coordinated layouts with shared filter context.</p>
+  </div>
+</div>
+
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: var(--emerald-light); font-size: 1.15rem; margin-bottom: 8px;">1. Market Overview Dashboard</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">Executive KPI cards (Total Models, Volume, Avg Price, Avg Range) paired with core sales distribution charts.</p>
+    <ul style="color: var(--text-muted); font-size: 0.84rem; padding-left: 18px; line-height: 1.6;">
+      <li>Sales by Category (Horizontal Bar)</li>
+      <li>Sales by Model Year 2018–2026 (Trend Line)</li>
+      <li>Top N Manufacturers (Dynamic Rank Filter)</li>
+      <li>Region vs Average Price (Bar Chart)</li>
+    </ul>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: var(--cyan-light); font-size: 1.15rem; margin-bottom: 8px;">2. Technology Dashboard</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">Deep dive into battery chemistries, cycle-life degradation resistance, and drivetrain architectures.</p>
+    <ul style="color: var(--text-muted); font-size: 0.84rem; padding-left: 18px; line-height: 1.6;">
+      <li>Battery Type Share (Donut / Pie)</li>
+      <li>Cycle Life vs 5-Yr Degradation (Dual-Axis)</li>
+      <li>Price vs Driving Range (Categorical Scatter)</li>
+      <li>Category x Drivetrain Heatmap (Matrix)</li>
+    </ul>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: #c084fc; font-size: 1.15rem; margin-bottom: 8px;">3. Geography &amp; Impact Dashboard</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">Spatial manufacturing distribution, operational suitability profiles, and environmental carbon displacement.</p>
+    <ul style="color: var(--text-muted); font-size: 0.84rem; padding-left: 18px; line-height: 1.6;">
+      <li>Manufacturing Country Map (Filled Map)</li>
+      <li>Recommended Use Case (Treemap)</li>
+      <li>CO₂ Saved by Category &amp; Region (Stacked Bar)</li>
+      <li>Customer Rating Distribution (Histogram)</li>
+    </ul>
+  </div>
+</div>
 {% endblock %}

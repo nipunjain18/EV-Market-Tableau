@@ -1,10 +1,72 @@
 {% extends "base.html" %}
-{% block title %}Story Narrative | EV Market Analysis{% endblock %}
+
+{% block title %}Story Narrative | EV Market Intelligence{% endblock %}
+
 {% block content %}
-<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-  <h2 style="margin:0;">Tableau Story: EV Market Dynamics</h2>
-  <a class="btn ghost" href="{{ viz_url }}" target="_blank" rel="noopener">Open in Tableau Public &nearr;</a>
+<div class="viz-container-card">
+  <div class="viz-toolbar">
+    <div>
+      <h2>📖 6-Scene Structured Tableau Story</h2>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 2px;">
+        An executive walkthrough guiding stakeholders from macro market scale to strategic engineering actions.
+      </p>
+    </div>
+    <div class="viz-actions">
+      <a href="{{ viz_url }}" target="_blank" rel="noopener" class="btn btn-outline-emerald btn-sm">
+        <span>Open in Tableau Public &nearr;</span>
+      </a>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-secondary btn-sm">
+        <span>Switch to Dashboards &rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  {% include "embed.html" %}
 </div>
-<p style="color:#555; margin-top:0;">Walk through the 6-scene analytical narrative covering market sizing, segment leaders, technology, geography, and strategic recommendations.</p>
-{% include "embed.html" %}
+
+<!-- 6 Scenes Narrative Roadmap -->
+<div class="section-header" style="margin-top: 36px;">
+  <div>
+    <h2>Narrative Story Scenes &amp; Key Messages</h2>
+    <p>Detailed analysis presented in each scene of the published Tableau Story.</p>
+  </div>
+</div>
+
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+    <span class="hub-tag" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3);">Scene 01</span>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin: 8px 0 6px;">Market Snapshot</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Baseline macro statistics across the fleet: 100,000 models, $65,010 average retail price, and 324.3 km average driving range.</p>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+    <span class="hub-tag" style="color: var(--cyan-light); border-color: rgba(6, 182, 212, 0.3);">Scene 02</span>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin: 8px 0 6px;">Who Sells the Most</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Mass-adoption volume drivers: Two-Wheeler Scooters (85.0M), Sedans (78.3M), and Compact SUVs (76.1M) command the majority of unit demand.</p>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+    <span class="hub-tag" style="color: #c084fc; border-color: rgba(168, 85, 247, 0.3);">Scene 03</span>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin: 8px 0 6px;">Price vs Driving Range</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Empirical economics: Battery capacity correlates strongly with price (r = 0.84), while range exhibits a far weaker correlation (r = 0.28).</p>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+    <span class="hub-tag" style="color: #facc15; border-color: rgba(250, 204, 21, 0.3);">Scene 04</span>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin: 8px 0 6px;">Battery Technology</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Durability benchmarking: Solid-State (2,999 cycles, 7.36% degradation) and LFP (2,498 cycles, 10.11%) drastically outperform NMC/NCA.</p>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+    <span class="hub-tag" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.3);">Scene 05</span>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin: 8px 0 6px;">Regions &amp; Countries</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Balanced global presence: Production and regional customer adoption are distributed evenly across the 7 international market territories.</p>
+  </div>
+
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+    <span class="hub-tag" style="color: var(--emerald-light); border-color: rgba(16, 185, 129, 0.3);">Scene 06</span>
+    <h3 style="color: var(--text-primary); font-size: 1.1rem; margin: 8px 0 6px;">Strategic Recommendations</h3>
+    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Actionable roadmaps: Automakers must prioritize high-durability chemistries (LFP/Solid-State) for high-frequency urban commuting vehicles.</p>
+  </div>
+</div>
 {% endblock %}

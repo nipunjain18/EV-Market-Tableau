@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}SQL Studio &amp; Data Explorer | EV Market Intelligence{% endblock %}
+
+{% block content %}
+<div class="section-header">
+  <div>
+    <h2>🗄️ Interactive SQL Studio &amp; Data Explorer</h2>
+    <p>Run verified analytical SQL queries directly against the 100,000-record SQLite/MySQL database engine.</p>
+  </div>
+  <div>
+    <a href="{{ url_for('download_data') }}" class="btn btn-secondary btn-sm">
+      <span>📥 Download Dataset (CSV)</span>
+    </a>
+  </div>
+</div>
+
+<div class="sql-layout">
+  <!-- Query Selector Sidebar -->
+  <aside class="query-sidebar">
+    <div style="font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px;">
+      Verified SQL Queries (10)
+    </div>
+    {% for key, item in queries.items() %}
+    <a href="{{ url_for('sql_lab', query=key) }}" class="query-nav-item {% if selected_key == key %}active{% endif %}">
+      {{ item.title }}
+    </a>
+    {% endfor %}
+  </aside>
+
+  <!-- Query Code and Results Area -->
+  <div class="sql-display-card">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+      <div>
+        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">{{ selected_query.title }}</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">{{ selected_query.description }}</p>
+      </div>
+      <div class="badge-pill" style="font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;">
+        ⚡ Executed in {{ exec_time_ms }} ms
+      </div>
+    </div>
+
+    <!-- SQL Syntax Box -->
+    <div class="code-box">
+      <pre><code>{{ selected_query.sql }}</code></pre>
+    </div>
+
+    <!-- Results Table -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; margin-bottom: 10px;">
+      <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-primary);">
+        Query Results ({{ results|length }} records returned)
+      </h4>
+      <span style="font-size: 0.8rem; color: var(--text-muted);">Source: data/ev_market.db (100,000 rows)</span>
+    </div>
+
+    {% if results %}
+    <div class="table-responsive">
+      <table class="data-table">
+        <thead>
+          <tr>
+            {% for col in columns %}
+            <th>{{ col }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in results %}
+          <tr>
+            {% for col in columns %}
+            <td>
+              {% if row[col] is number %}
+                {{ "{:,.2f}".format(row[col]) if row[col] is float else "{:,}".format(row[col]) }}
+              {% else %}
+                {{ row[col] }}
+              {% endif %}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="card" style="padding: 20px; text-align: center; color: var(--text-muted);">
+      No rows returned or database query was empty.
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

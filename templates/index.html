@@ -1,36 +1,259 @@
 {% extends "base.html" %}
+
 {% block content %}
-<section class="hero">
-  <h1>Global Electric Vehicle Market Analysis</h1>
-  <p>Comprehensive market sizing, battery technology durability, pricing trends, and CO₂ environmental impact across 100,000 EV models (2018–2026).</p>
-  <div style="margin-top: 15px;">
-    <a class="btn" href="{{ url_for('dashboard') }}">Explore Dashboard</a>
-    <a class="btn ghost" href="{{ url_for('story') }}">View Tableau Story</a>
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="badge-pill">
+    <span class="pulse-dot"></span>
+    <span>Data Analytics &amp; Business Intelligence Portfolio &middot; {{ student_name }}</span>
+  </div>
+
+  <h1 class="hero-title">
+    Global <span class="gradient-text">Electric Vehicle</span> Market Intelligence
+  </h1>
+
+  <p class="hero-subtitle">
+    An end-to-end data analytics platform evaluating <strong>{{ record_count }} EV models</strong> across <strong>{{ attribute_count }} engineering &amp; commercial dimensions</strong>. Featuring interactive Tableau visualizations, high-performance SQL analytics, and full-lifecycle business documentation.
+  </p>
+
+  <!-- Quick Redirect Action Bar -->
+  <div class="quick-action-bar">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">
+      <span>📊 Interactive Dashboards</span>
+    </a>
+    <a href="{{ url_for('story') }}" class="btn btn-secondary">
+      <span>📖 6-Scene Story</span>
+    </a>
+    <a href="{{ url_for('sql_lab') }}" class="btn btn-secondary">
+      <span>🗄️ SQL Query Lab</span>
+    </a>
+    <a href="{{ url_for('report') }}" class="btn btn-secondary">
+      <span>📄 Project Report (PDF)</span>
+    </a>
+    <a href="{{ github_url }}" target="_blank" rel="noopener" class="btn btn-secondary">
+      <span>💻 GitHub Repo &nearr;</span>
+    </a>
   </div>
 </section>
 
-<section class="grid">
-  <div class="card">
-    <h3>Dataset & Storage</h3>
-    <p>100,000 distinct EV records across 37 attributes. Loaded into database tables with optimized indexing and automated view creation.</p>
+<!-- KPI Metrics Ribbon -->
+<div class="metrics-ribbon">
+  <div class="metric-card">
+    <div class="metric-value emerald">100,000</div>
+    <div class="metric-label">EV Models Analyzed</div>
   </div>
-  <div class="card">
-    <h3>SQL & Analytics</h3>
-    <p>10 multi-dimensional SQL queries evaluating volume, pricing trends, battery degradation rates, and regional adoption patterns.</p>
+  <div class="metric-card">
+    <div class="metric-value">200</div>
+    <div class="metric-label">Automotive Brands</div>
   </div>
-  <div class="card">
-    <h3>Interactive BI</h3>
-    <p>12 Tableau visualizations, 3 coordinated dashboards (Market, Tech, Geo), and a 6-scene structured narrative story.</p>
+  <div class="metric-card">
+    <div class="metric-value">15</div>
+    <div class="metric-label">Vehicle Categories</div>
   </div>
-</section>
+  <div class="metric-card">
+    <div class="metric-value emerald">5</div>
+    <div class="metric-label">Battery Chemistries</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">7</div>
+    <div class="metric-label">Global Market Regions</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value emerald">&lt; 0.8s</div>
+    <div class="metric-label">Extract Filter Latency</div>
+  </div>
+</div>
 
-<div class="card" style="margin-top: 24px;">
-  <h3>Key Executive Summary</h3>
-  <ul style="padding-left: 20px; line-height: 1.8;">
-    <li><strong>Volume Drivers:</strong> Two-Wheeler Scooters (85.0M units), Sedans (78.3M), and Compact SUVs (76.1M) represent the bulk of adoption.</li>
-    <li><strong>Battery Longevity:</strong> Solid-State leads with 2,999 cycles and 7.36% 5-yr degradation, closely followed by LFP with 2,498 cycles and 10.11%.</li>
-    <li><strong>Pricing Factors:</strong> Vehicle price is strongly correlated with battery capacity (0.84) rather than driving range (0.28).</li>
-    <li><strong>Global Distribution:</strong> Manufacturing and regional demand show balanced global adoption across all 7 market regions.</li>
-  </ul>
+<!-- All-In-One Core Modules / Redirect Hub -->
+<div class="section-header">
+  <div>
+    <h2>Project Modules &amp; Navigation Hub</h2>
+    <p>Directly access every deliverable, visualization, dataset query, and technical documentation file.</p>
+  </div>
+</div>
+
+<div class="hub-grid">
+  <!-- Module 1: Interactive Dashboards -->
+  <a href="{{ url_for('dashboard') }}" class="hub-card">
+    <div>
+      <div class="hub-card-header">
+        <div class="hub-card-icon">📊</div>
+        <div class="hub-card-title">
+          <span>Module 01</span>
+          <h3>Tableau Dashboards</h3>
+        </div>
+      </div>
+      <div class="hub-card-body">
+        <p>Explore 3 synchronized executive dashboards: Market Overview, Technology &amp; Battery Durability, and Geography &amp; Environmental Impact with full cross-filtering.</p>
+        <div class="hub-card-tags">
+          <span class="hub-tag">12 Worksheets</span>
+          <span class="hub-tag">KPI Cards</span>
+          <span class="hub-tag">6 Global Filters</span>
+          <span class="hub-tag">Top N Parameter</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-card-footer">
+      <span>Launch Interactive Dashboards</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <!-- Module 2: 6-Scene Story Narrative -->
+  <a href="{{ url_for('story') }}" class="hub-card">
+    <div>
+      <div class="hub-card-header">
+        <div class="hub-card-icon cyan">📖</div>
+        <div class="hub-card-title">
+          <span>Module 02</span>
+          <h3>Tableau Story Narrative</h3>
+        </div>
+      </div>
+      <div class="hub-card-body">
+        <p>A guided 6-scene structured narrative presenting market sizing, mass-adoption volume drivers, battery durability science, and strategic recommendations.</p>
+        <div class="hub-card-tags">
+          <span class="hub-tag">6 Scenes</span>
+          <span class="hub-tag">Executive Summary</span>
+          <span class="hub-tag">Battery Chemistry</span>
+          <span class="hub-tag">Price Regression</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-card-footer">
+      <span>Read 6-Scene Story</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <!-- Module 3: SQL & Database Studio -->
+  <a href="{{ url_for('sql_lab') }}" class="hub-card">
+    <div>
+      <div class="hub-card-header">
+        <div class="hub-card-icon purple">🗄️</div>
+        <div class="hub-card-title">
+          <span>Module 03</span>
+          <h3>SQL Lab &amp; Database Studio</h3>
+        </div>
+      </div>
+      <div class="hub-card-body">
+        <p>Interactive SQL query engine connected to the 100,000-record SQLite/MySQL database. Inspect verified analytical queries with live tabular results.</p>
+        <div class="hub-card-tags">
+          <span class="hub-tag">10 Queries</span>
+          <span class="hub-tag">SQLite / MySQL</span>
+          <span class="hub-tag">vw_ev_clean</span>
+          <span class="hub-tag">Performance Indexing</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-card-footer">
+      <span>Open SQL Query Studio</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <!-- Module 4: PDF Project Report -->
+  <a href="{{ url_for('report') }}" class="hub-card">
+    <div>
+      <div class="hub-card-header">
+        <div class="hub-card-icon">📄</div>
+        <div class="hub-card-title">
+          <span>Module 04</span>
+          <h3>Publication PDF Report</h3>
+        </div>
+      </div>
+      <div class="hub-card-body">
+        <p>Comprehensive 13-page formal project report featuring problem understanding, database architecture, query benchmarks, and full analytical findings.</p>
+        <div class="hub-card-tags">
+          <span class="hub-tag">13 Pages</span>
+          <span class="hub-tag">Cover Page</span>
+          <span class="hub-tag">13 Chart Figures</span>
+          <span class="hub-tag">One-Click Download</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-card-footer">
+      <span>View &amp; Download PDF</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+
+  <!-- Module 5: Performance Testing Record -->
+  <div class="hub-card">
+    <div>
+      <div class="hub-card-header">
+        <div class="hub-card-icon cyan">⚡</div>
+        <div class="hub-card-title">
+          <span>Module 05</span>
+          <h3>Performance Testing</h3>
+        </div>
+      </div>
+      <div class="hub-card-body">
+        <p>Verified workload metrics for Skill Wallet accreditation: 100,000 records rendered, 6 synchronized filters, 6 calculated fields, and sub-second extract response.</p>
+        <div class="hub-card-tags">
+          <span class="hub-tag">100k Rows</span>
+          <span class="hub-tag">6 Filters</span>
+          <span class="hub-tag">6 Calc Fields</span>
+          <span class="hub-tag">&lt; 0.8s Latency</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-card-footer" style="color: var(--text-muted);">
+      <span>Skill Wallet Status: 90% Verified</span>
+      <span>✓</span>
+    </div>
+  </div>
+
+  <!-- Module 6: Project Attribution & Repo -->
+  <a href="{{ url_for('about') }}" class="hub-card">
+    <div>
+      <div class="hub-card-header">
+        <div class="hub-card-icon purple">👤</div>
+        <div class="hub-card-title">
+          <span>Module 06</span>
+          <h3>Project &amp; Author Specs</h3>
+        </div>
+      </div>
+      <div class="hub-card-body">
+        <p>Complete student attribution for <strong>{{ student_name }}</strong>, dataset provenance audit, technology stack specifications, and repository release metadata.</p>
+        <div class="hub-card-tags">
+          <span class="hub-tag">Nipun Jain</span>
+          <span class="hub-tag">Data Analytics</span>
+          <span class="hub-tag">Tableau Public</span>
+          <span class="hub-tag">MIT Open Source</span>
+        </div>
+      </div>
+    </div>
+    <div class="hub-card-footer">
+      <span>Read Project Profile</span>
+      <span>&rarr;</span>
+    </div>
+  </a>
+</div>
+
+<!-- Key Empirical Findings Banner -->
+<div class="section-header" style="margin-top: 40px;">
+  <div>
+    <h2>Key Market Intelligence Findings</h2>
+    <p>Core quantitative takeaways derived from the 100,000-model dataset.</p>
+  </div>
+</div>
+
+<div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 50px;">
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: var(--emerald-light); font-size: 1.05rem; margin-bottom: 8px;">🛵 Volume Disparity</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Two-Wheeler Scooters lead global sales (<strong>85.0M units</strong>), followed by Sedans (<strong>78.3M</strong>) and Compact SUVs (<strong>76.1M</strong>). Buses and Trucks represent low volume (5.1M) but premium ticket revenue.</p>
+  </div>
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: var(--cyan-light); font-size: 1.05rem; margin-bottom: 8px;">🔋 Battery Longevity Science</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Solid-State leads with <strong>2,999 cycles</strong> and <strong>7.36% 5-yr degradation</strong>; LFP follows with <strong>2,498 cycles</strong> and <strong>10.11%</strong>. NMC, Sodium-Ion, and NCA suffer ~14% degradation.</p>
+  </div>
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: #c084fc; font-size: 1.05rem; margin-bottom: 8px;">💰 Price Drivers</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Vehicle price correlates strongly with battery pack capacity (<strong>r = 0.84</strong>) rather than driving range (<strong>r = 0.28</strong>), reflecting high raw pack manufacturing expenses.</p>
+  </div>
+  <div class="card" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 22px;">
+    <h3 style="color: #facc15; font-size: 1.05rem; margin-bottom: 8px;">⚡ Charging Parity</h3>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">Fast-charge durations average <strong>~21.1 minutes</strong> and range averages <strong>~324 km</strong> across all 5 chemistries, proving chemistry choice dictates lifecycle durability rather than charge speed.</p>
+  </div>
 </div>
 {% endblock %}
