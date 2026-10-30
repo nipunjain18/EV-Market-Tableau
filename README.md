@@ -149,8 +149,8 @@ Open your browser and navigate to `http://127.0.0.1:5000` to view the interactiv
 
 ---
 
-## Academic Integrity & Attribution
+## Author & Project Info
 
-- **Student Author:** Nipun Jain
-- **Academic Context:** Data Analytics and Business Intelligence Project
-- **Attribution:** The architectural foundation and Tableau visualization designs for this project were adapted from a peer reference implementation. The data pipeline, database loader, SQL queries, calculations, web application, and report have been audited, verified against the 100,000-record reference dataset, and customized for Nipun Jain.
+- **Author:** Nipun Jain
+- **Domain:** Data Analytics & Business Intelligence
+- **Tools:** Tableau Desktop, Tableau Public, Python (Flask, pandas), SQLite, SQL

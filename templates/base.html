@@ -6,11 +6,9 @@
   <title>{% block title %}EV360 | Global Electric Vehicle Market Analytics{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-  <!-- Tableau Embedding API v3 -->
   <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 </head>
 <body>
-  <!-- Sticky Floating Pill Navbar -->
   <div class="nav-wrapper">
     <header class="floating-nav">
       <a href="{{ url_for('home') }}" class="brand-wrapper">
@@ -18,7 +16,6 @@
         <span class="brand-name">EV360</span>
       </a>
 
-      <!-- Navigation Pill Links -->
       <nav class="nav-menu">
         <a href="#home" class="nav-item active" id="nav-home">Home</a>
         <a href="#about" class="nav-item" id="nav-about">About</a>
@@ -35,12 +32,10 @@
     </header>
   </div>
 
-  <!-- Main Body Content -->
   <main class="site-content">
     {% block content %}{% endblock %}
   </main>
 
-  <!-- Clean Minimal Footer -->
   <footer class="minimal-footer">
     <div class="footer-inner">
       <div class="footer-copy">
@@ -58,10 +53,8 @@
     </div>
   </footer>
 
-  <!-- Light interactive script for active navbar states and FAQ toggle -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // FAQ Accordion Toggle
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
@@ -74,7 +67,6 @@
         });
       });
 
-      // Active Navigation State on Scroll
       const sections = document.querySelectorAll('section[id]');
       const navItems = document.querySelectorAll('nav.nav-menu a.nav-item');
 

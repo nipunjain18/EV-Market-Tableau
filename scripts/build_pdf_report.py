@@ -610,13 +610,12 @@ def create_report(output_pdf_path):
     story.append(Paragraph("&bull; <b>Dataset Synthetic Character:</b> Temporal distribution is uniform across 2018–2026 (~11,100 models/year) with flat price and range averages, indicating synthetic generation without historical technological curves.", bullet_style))
     story.append(Spacer(1, 4))
 
-    story.append(Paragraph("12. Conclusion, Future Scope & Academic Attribution", h1_style))
+    story.append(Paragraph("12. Conclusion & Future Scope", h1_style))
     story.append(Paragraph(
         "<b>Conclusion:</b> This project completes an end-to-end data analytics lifecycle — transforming raw CSV records into an indexed database, "
         "executing SQL queries, engineering Tableau calculations, building synchronized dashboards, and deploying an interactive web application. "
         "<br/><b>Future Scope:</b> Ingest real-world telemetry and charging infrastructure datasets; integrate automated ML sales forecasting models; and deploy the containerized web app to cloud platforms. "
-        "<br/><b>Academic Attribution:</b> Project customized and verified by <b>Nipun Jain</b> for the Data Analytics and Business Intelligence domain. "
-        "Architectural patterns adapted from an established project baseline with strict validation against the 100,000-record reference dataset.",
+        "<br/><b>Author:</b> Developed and presented by <b>Nipun Jain</b> for the Data Analytics and Business Intelligence curriculum.",
         body_style
     ))
 

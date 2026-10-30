@@ -1,5 +1,4 @@
-"""Flask Web Application for EV Market Analysis (EV360).
-Aesthetic single-page design matching Health360 reference.
+"""Electric Vehicle Market Analytics (EV360) Web Application.
 Author: Nipun Jain
 """
 import os

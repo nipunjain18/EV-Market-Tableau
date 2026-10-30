@@ -50,9 +50,7 @@ body {
   flex-direction: column;
 }
 
-/* =========================================================================
-   STICKY FLOATING PILL NAVBAR
-   ========================================================================= */
+/* Navigation */
 .nav-wrapper {
   position: sticky;
   top: 16px;
@@ -137,9 +135,7 @@ nav.nav-menu a.nav-item.active {
   gap: 8px;
 }
 
-/* =========================================================================
-   BUTTONS
-   ========================================================================= */
+/* Buttons */
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -186,9 +182,7 @@ nav.nav-menu a.nav-item.active {
   border-radius: var(--radius-full);
 }
 
-/* =========================================================================
-   HERO SECTION
-   ========================================================================= */
+/* Hero section */
 main.site-content {
   flex: 1;
   max-width: 1200px;
@@ -272,9 +266,7 @@ main.site-content {
   font-size: 1rem;
 }
 
-/* =========================================================================
-   HERO RIGHT ILLUSTRATION (MOCKUP CARD)
-   ========================================================================= */
+/* Preview card */
 .hero-right {
   display: flex;
   justify-content: center;
@@ -437,9 +429,7 @@ main.site-content {
   color: var(--text-light);
 }
 
-/* =========================================================================
-   MAC-STYLE WINDOWS FOR VISUALISATIONS
-   ========================================================================= */
+/* Visualization embeds */
 .section-wrapper {
   scroll-margin-top: 80px;
   margin-top: 60px;
@@ -530,9 +520,7 @@ tableau-viz {
   min-height: 820px;
 }
 
-/* =========================================================================
-   ABOUT 3-FEATURE CARDS
-   ========================================================================= */
+/* Features */
 .feature-cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -580,9 +568,7 @@ tableau-viz {
   line-height: 1.6;
 }
 
-/* =========================================================================
-   FAQ ACCORDION
-   ========================================================================= */
+/* FAQ */
 .faq-container {
   max-width: 820px;
   margin: 0 auto;
@@ -629,9 +615,7 @@ tableau-viz {
   transform: rotate(45deg);
 }
 
-/* =========================================================================
-   FOOTER
-   ========================================================================= */
+/* Footer */
 footer.minimal-footer {
   border-top: 1px solid var(--border);
   background: #FFFFFF;
@@ -671,9 +655,7 @@ footer.minimal-footer {
   color: var(--terracotta);
 }
 
-/* =========================================================================
-   RESPONSIVE
-   ========================================================================= */
+/* Responsive */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
