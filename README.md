@@ -54,7 +54,7 @@ EV-Market-Tableau/
 ├── app.py                           # Flask web server embedding Tableau API
 ├── requirements.txt                 # Python package requirements
 ├── README.md                        # Complete project documentation
-├── EV_Market_Tableau_Project_Report.pdf # Final PDF Report
+├── start_website.bat                # One-click launcher for Flask web server
 ├── data/
 │   ├── raw/
 │   │   └── ev_market_test.csv       # Preserved 100,000-record reference dataset
@@ -63,7 +63,8 @@ EV-Market-Tableau/
 │   └── ev_market.db                 # SQLite database loaded with 100k rows
 ├── scripts/
 │   ├── load_to_db.py                # Database loader script (SQLite / MySQL)
-│   └── clean_data.py                # Data transformation & feature derivation script
+│   ├── clean_data.py                # Data transformation & feature derivation script
+│   └── build_pdf_report.py          # ReportLab PDF report generation script
 ├── sql/
 │   ├── schema.sql                   # DDL table creation and indexing statements
 │   └── queries.sql                  # 10 verified analytical SQL queries
@@ -71,21 +72,17 @@ EV-Market-Tableau/
 │   ├── EV Market Analysis.twbx      # Preserved Tableau packaged workbook
 │   └── README.md                    # Detailed Tableau worksheet & dashboard guide
 ├── templates/                       # Flask Jinja2 HTML templates
-│   ├── base.html                    # Base layout with navigation and branding
-│   ├── index.html                   # Project landing page and summary
-│   ├── dashboard.html               # Interactive Dashboard embed page
-│   ├── story.html                   # 6-scene Tableau Story embed page
-│   ├── about.html                   # Project metadata and student information
-│   └── embed.html                   # Reusable Tableau Embedding API v3 component
+│   ├── base.html                    # Base layout with floating pill navbar & footer
+│   └── index.html                   # Single-page application (#home, #about, #dashboard, #story, #faq)
 ├── static/
 │   └── css/
-│       └── style.css                # Responsive stylesheet with light/dark theme
+│       └── style.css                # Warm terracotta aesthetic stylesheet
 └── docs/
-    ├── EV_Market_Tableau_Project_Report.pdf # Project report copy
+    ├── EV_Market_Tableau_Project_Report.pdf # Comprehensive 13-page project report
     ├── tableau_build_guide.md       # Step-by-step Tableau worksheet build guide
     ├── performance_testing.md       # Benchmark and optimization documentation
-    ├── charts/                      # Visualization PNG charts
-    └── screenshots/                 # Database, SQL, and Web UI screenshots
+    ├── charts/                      # 7 core analytical PNG charts
+    └── screenshots/                 # 9 verified database, SQL, and Web UI screenshots
 ```
 
 ---

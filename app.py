@@ -68,7 +68,7 @@ def faq():
 @app.route("/report")
 def report():
     return send_from_directory(
-        os.path.join(BASE_DIR, "static", "docs"),
+        os.path.join(BASE_DIR, "docs"),
         "EV_Market_Tableau_Project_Report.pdf"
     )
 
@@ -76,7 +76,7 @@ def report():
 @app.route("/download/report")
 def download_report():
     return send_from_directory(
-        os.path.join(BASE_DIR, "static", "docs"),
+        os.path.join(BASE_DIR, "docs"),
         "EV_Market_Tableau_Project_Report.pdf",
         as_attachment=True
     )

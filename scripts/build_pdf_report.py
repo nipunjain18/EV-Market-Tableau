@@ -625,5 +625,5 @@ def create_report(output_pdf_path):
 
 if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    target_path = os.path.join(base_dir, "EV_Market_Tableau_Project_Report.pdf")
+    target_path = os.path.join(base_dir, "docs", "EV_Market_Tableau_Project_Report.pdf")
     create_report(target_path)
