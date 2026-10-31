@@ -87,8 +87,13 @@ def download_data():
     return send_from_directory(raw_path, "ev_market_test.csv", as_attachment=True)
 
 
+@app.route("/health")
+def health():
+    return {"status": "healthy", "service": "EV360 Analytics"}, 200
+
+
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5000))
-    debug = os.getenv("FLASK_DEBUG", "True").lower() in ("true", "1", "yes")
-    print(f"Starting EV360 Web App on http://127.0.0.1:{port}")
+    debug = os.getenv("FLASK_DEBUG", "False").lower() in ("true", "1", "yes")
+    print(f"Starting EV360 Web App on http://0.0.0.0:{port}")
     app.run(host="0.0.0.0", port=port, debug=debug)
