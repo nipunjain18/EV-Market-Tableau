@@ -18,7 +18,7 @@ TABLEAU_DASHBOARD_URL = os.getenv(
     "https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview"
 )
 GITHUB_URL = "https://github.com/nipunjain18/EV-Market-Tableau"
-DEMO_VIDEO_URL = "https://drive.google.com/file/d/1Oik0Z53AKzTwvmX7_oB2swu_yIT3qbFW/view?usp=drivesdk"
+DEMO_VIDEO_URL = "https://drive.google.com/file/d/1bhgJYTCFo_HUNPkSzLFqEuRo9CGH60u0/view?usp=drive_link"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 

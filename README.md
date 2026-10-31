@@ -1,3 +1,4 @@
+
 # Global Electric Vehicle Market Analysis
 
 **Author:** Nipun Jain  
@@ -28,6 +29,7 @@ The project implements a complete Business Intelligence pipeline:
 - **Published Tableau Dashboard:** [Tableau Public Market Overview](https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview)
 - **Project Report:** `EV_Market_Tableau_Project_Report.pdf` (Included in root and `docs/`)
 - **Packaged Tableau Workbook:** `tableau/EV Market Analysis.twbx` (Preserved 15.3 MB workbook with embedded extract)
+- **Demo Video Walkthrough:** [Google Drive Demo Video — Nipun Jain](https://drive.google.com/file/d/1bhgJYTCFo_HUNPkSzLFqEuRo9CGH60u0/view?usp=drive_link)
 
 ---
 

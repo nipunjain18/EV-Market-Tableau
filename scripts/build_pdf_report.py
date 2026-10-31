@@ -31,20 +31,20 @@ class NumberedCanvas(canvas.Canvas):
     def draw_header_footer(self, page_count):
         self.saveState()
         self.setFont("Helvetica", 8)
-        self.setFillColor(colors.HexColor("#4b6356"))
+        self.setFillColor(colors.HexColor("#766964"))
         
         # Header (pages 1 to N)
-        self.drawString(54, 11 * 72 - 36, "Global EV Market Analysis | SmartBridge Skill Wallet | Data Analytics with Tableau")
+        self.drawString(54, 11 * 72 - 36, "EV360 | Global EV Market Analysis | Nipun Jain | Data Analytics with Tableau")
         page_str = f"Page {self._pageNumber}"
         self.drawRightString(8.5 * 72 - 54, 11 * 72 - 36, page_str)
-        self.setStrokeColor(colors.HexColor("#d8e5de"))
+        self.setStrokeColor(colors.HexColor("#dcd2c8"))
         self.setLineWidth(0.5)
         self.line(54, 11 * 72 - 42, 8.5 * 72 - 54, 11 * 72 - 42)
 
         # Footer (pages 2 to N)
         if self._pageNumber > 1:
             self.line(54, 45, 8.5 * 72 - 54, 45)
-            self.drawString(54, 32, "EV Market Analysis — Tableau & SQL Engineering Project Report | Author: Nipun Jain")
+            self.drawString(54, 32, "EV360 Market Analysis — Tableau & SQL Engineering Project Report | Author: Nipun Jain")
             self.drawRightString(8.5 * 72 - 54, 32, f"Page {self._pageNumber} of {page_count}")
         
         self.restoreState()
@@ -63,12 +63,12 @@ def create_report(output_pdf_path):
     styles = getSampleStyleSheet()
 
     # Custom palette
-    DARK_GREEN = colors.HexColor("#0d2e21")
-    TEAL_ACCENT = colors.HexColor("#178a63")
-    LIGHT_BG = colors.HexColor("#f8faf9")
-    BORDER_COLOR = colors.HexColor("#d8e5de")
-    TEXT_DARK = colors.HexColor("#13241c")
-    TEXT_MUTED = colors.HexColor("#4b6356")
+    DARK_GREEN = colors.HexColor("#643729")
+    TEAL_ACCENT = colors.HexColor("#7A4535")
+    LIGHT_BG = colors.HexColor("#FAF8F5")
+    BORDER_COLOR = colors.HexColor("#DCD2C8")
+    TEXT_DARK = colors.HexColor("#2D2522")
+    TEXT_MUTED = colors.HexColor("#766964")
 
     # Typography styles
     title_style = ParagraphStyle(
@@ -137,8 +137,8 @@ def create_report(output_pdf_path):
         fontName='Courier',
         fontSize=7.5,
         leading=10,
-        textColor=colors.HexColor("#0f3d2e"),
-        backColor=colors.HexColor("#f0f5f2"),
+        textColor=colors.HexColor("#643729"),
+        backColor=colors.HexColor("#FAF8F5"),
         borderPadding=6,
         spaceBefore=4,
         spaceAfter=6
@@ -194,11 +194,12 @@ def create_report(output_pdf_path):
     meta_data = [
         [Paragraph("<b>Student Name</b>", body_style), Paragraph("<b>Nipun Jain</b>", body_style)],
         [Paragraph("<b>Project Domain</b>", body_style), Paragraph("Data Analytics and Business Intelligence", body_style)],
-        [Paragraph("<b>GitHub Repository</b>", body_style), Paragraph("<font color='#178a63'><u>https://github.com/nipunjain18/ev-market-tableau</u></font>", body_style)],
-        [Paragraph("<b>Tableau Public Story</b>", body_style), Paragraph("<font color='#178a63'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1</u></font>", body_style)],
-        [Paragraph("<b>Tableau Dashboard</b>", body_style), Paragraph("<font color='#178a63'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview</u></font>", body_style)],
+        [Paragraph("<b>Live Web Application</b>", body_style), Paragraph("<font color='#7a4535'><u>https://ev-market-tableau.onrender.com</u></font>", body_style)],
+        [Paragraph("<b>GitHub Repository</b>", body_style), Paragraph("<font color='#7a4535'><u>https://github.com/nipunjain18/EV-Market-Tableau</u></font>", body_style)],
+        [Paragraph("<b>Tableau Public Story</b>", body_style), Paragraph("<font color='#7a4535'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1</u></font>", body_style)],
+        [Paragraph("<b>Tableau Dashboard</b>", body_style), Paragraph("<font color='#7a4535'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview</u></font>", body_style)],
         [Paragraph("<b>Dataset Verified</b>", body_style), Paragraph("<code>ev_market_test.csv</code> (Exactly 100,000 Records, 37 Features)", body_style)],
-        [Paragraph("<b>Demo Video Walkthrough</b>", body_style), Paragraph("<font color='#178a63'><u>https://drive.google.com/file/d/1Oik0Z53AKzTwvmX7_oB2swu_yIT3qbFW/view?usp=drivesdk</u></font>", body_style)]
+        [Paragraph("<b>Demo Video Walkthrough</b>", body_style), Paragraph("<font color='#7a4535'><u>https://drive.google.com/file/d/1bhgJYTCFo_HUNPkSzLFqEuRo9CGH60u0/view?usp=drive_link</u></font>", body_style)]
     ]
     t_meta = Table(meta_data, colWidths=[140, 364])
     t_meta.setStyle(TableStyle([
@@ -516,7 +517,7 @@ def create_report(output_pdf_path):
         "<br/>&bull; <b>Market Overview:</b> KPI Cards (Total Models, Sales, Avg Price, Avg Range), Sales by Category, Sales by Year, Top N Manufacturers, Region Price."
         "<br/>&bull; <b>Technology:</b> Battery Type Share, Battery Durability, Price vs Range Scatter, Category x Drivetrain Heatmap."
         "<br/>&bull; <b>Geography and Impact:</b> Manufacturing Country Filled Map, Recommended Use Case Treemap, CO₂ Saved Stacked Bar, Rating Histogram."
-        "<br/><b>Live Dashboard URL:</b> <font color='#178a63'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview</u></font>",
+        "<br/><b>Live Dashboard URL:</b> <font color='#7a4535'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/MarketOverview</u></font>",
         body_style
     ))
     story.append(Spacer(1, 4))
@@ -524,7 +525,7 @@ def create_report(output_pdf_path):
     story.append(Paragraph("8. Tableau Story Architecture (6 Narrative Scenes)", h1_style))
     story.append(Paragraph(
         "The narrative story guides executive stakeholders from macro market sizing to operational takeaways: "
-        "<br/><b>Published Story URL:</b> <font color='#178a63'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link</u></font>",
+        "<br/><b>Published Story URL:</b> <font color='#7a4535'><u>https://public.tableau.com/views/EVMarketAnalysis_17932840807840/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link</u></font>",
         body_style
     ))
 
@@ -562,19 +563,19 @@ def create_report(output_pdf_path):
     f7_path = os.path.join(sc_dir, "07_web_home_page.png")
     if os.path.exists(f7_path):
         story.append(Image(f7_path, width=440, height=130))
-        story.append(Paragraph("<b>Figure 7:</b> Web portal landing page running at <code>http://127.0.0.1:5000</code> displaying core project architecture.", caption_style))
+        story.append(Paragraph("<b>Figure 7:</b> Web portal landing page live on Render (<code>https://ev-market-tableau.onrender.com</code>) featuring warm terracotta design and fleet metrics.", caption_style))
 
     # Figure 8: Flask Dashboard Embed
     f8_path = os.path.join(sc_dir, "08_web_dashboard_embed.png")
     if os.path.exists(f8_path):
         story.append(Image(f8_path, width=440, height=130))
-        story.append(Paragraph("<b>Figure 8:</b> Dashboard page embedding the Tableau Public Market Overview dashboard with live filters.", caption_style))
+        story.append(Paragraph("<b>Figure 8:</b> EV360 Dashboard page embedding Nipun Jain's Tableau Public Market Overview dashboard with live filters.", caption_style))
 
     # Figure 9: Flask Story Embed
     f9_path = os.path.join(sc_dir, "09_web_story_embed.png")
     if os.path.exists(f9_path):
         story.append(Image(f9_path, width=440, height=130))
-        story.append(Paragraph("<b>Figure 9:</b> Story page embedding the 6-scene interactive Tableau Story narrative.", caption_style))
+        story.append(Paragraph("<b>Figure 9:</b> EV360 Story page embedding Nipun Jain's 6-scene interactive Tableau narrative.", caption_style))
 
     story.append(PageBreak())
 
