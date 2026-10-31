@@ -711,23 +711,23 @@ def create_report(output_pdf_path):
         body_style
     ))
 
-    # Figure 7: Flask Home
-    f7_path = os.path.join(sc_dir, "07_web_home_page.png")
-    if os.path.exists(f7_path):
-        story.append(Image(f7_path, width=440, height=130))
-        story.append(Paragraph("<b>Figure 7:</b> Web portal landing page live on Render (<code>https://ev-market-tableau.onrender.com</code>) featuring warm terracotta design and fleet metrics.", caption_style))
+    # Figure 1: Flask Home
+    f1_path = os.path.join(sc_dir, "01_web_home_page.png")
+    if os.path.exists(f1_path):
+        story.append(Image(f1_path, width=440, height=130))
+        story.append(Paragraph("<b>Figure 1:</b> Web portal landing page live on Render (<code>https://ev-market-tableau.onrender.com</code>) featuring warm terracotta design and fleet metrics.", caption_style))
 
-    # Figure 8: Flask Dashboard Embed
-    f8_path = os.path.join(sc_dir, "08_web_dashboard_embed.png")
-    if os.path.exists(f8_path):
-        story.append(Image(f8_path, width=440, height=130))
-        story.append(Paragraph("<b>Figure 8:</b> EV360 Dashboard page embedding Nipun Jain's Tableau Public Market Overview dashboard with live filters.", caption_style))
+    # Figure 2: Flask Dashboard Embed
+    f2_path = os.path.join(sc_dir, "02_web_dashboard_embed.png")
+    if os.path.exists(f2_path):
+        story.append(Image(f2_path, width=440, height=130))
+        story.append(Paragraph("<b>Figure 2:</b> EV360 Dashboard page embedding Nipun Jain's Tableau Public Market Overview dashboard with live filters.", caption_style))
 
-    # Figure 9: Flask Story Embed
-    f9_path = os.path.join(sc_dir, "09_web_story_embed.png")
-    if os.path.exists(f9_path):
-        story.append(Image(f9_path, width=440, height=130))
-        story.append(Paragraph("<b>Figure 9:</b> EV360 Story page embedding Nipun Jain's 6-scene interactive Tableau narrative.", caption_style))
+    # Figure 3: Flask Story Embed
+    f3_path = os.path.join(sc_dir, "03_web_story_embed.png")
+    if os.path.exists(f3_path):
+        story.append(Image(f3_path, width=440, height=130))
+        story.append(Paragraph("<b>Figure 3:</b> EV360 Story page embedding Nipun Jain's 6-scene interactive Tableau narrative.", caption_style))
 
     story.append(PageBreak())
 

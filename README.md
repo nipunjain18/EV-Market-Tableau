@@ -87,7 +87,7 @@ EV-Market-Tableau/
     ├── tableau_build_guide.md       # Step-by-step Tableau worksheet build guide
     ├── performance_testing.md       # Benchmark and optimization documentation
     ├── charts/                      # 7 core analytical PNG charts
-    └── screenshots/                 # 9 verified database, SQL, and Web UI screenshots
+    └── screenshots/                 # 3 verified EV360 Web UI screenshots (Home, Dashboard, Story)
 ```
 
 ---
